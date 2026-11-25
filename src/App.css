@@ -1,0 +1,109 @@
+
+.app {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    background-color: #2563eb;
+    color: white;
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+}
+
+    header h1 {
+        margin: 0 0 10px;
+    }
+
+    header p {
+        margin: 0;
+    }
+
+main {
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+}
+
+h2 {
+    color: #1e40af;
+    margin-top: 10px;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+
+button {
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    margin: 8px 8px 8px 0;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+    button:hover {
+        background-color: #1d4ed8;
+    }
+
+.word-list {
+    margin-top: 25px;
+}
+
+.word-item {
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+    padding: 18px;
+    margin-bottom: 15px;
+    background-color: #f9fafb;
+}
+
+    .word-item h3 {
+        color: #1e40af;
+        margin-top: 0;
+    }
+
+    .word-item a {
+        display: inline-block;
+        margin: 8px 0;
+        color: #2563eb;
+    }
+
+a {
+    color: #2563eb;
+}
+
+@media (max-width: 600px) {
+    .app {
+        padding: 10px;
+    }
+
+    main {
+        padding: 15px;
+    }
+}
+
+mark {
+    background-color: #ffeb3b;
+    color: #222222;
+    padding: 2px;
+    border-radius: 3px;
+}
