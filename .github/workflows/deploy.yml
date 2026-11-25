@@ -11,16 +11,9 @@ permissions:
   pages: write
   id-token: write
 
-concurrency:
-  group: pages
-  cancel-in-progress: true
-
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
       - name: Download code
@@ -41,14 +34,20 @@ jobs:
       - name: Support direct links
         run: cp dist/index.html dist/404.html
 
-      - name: Setup GitHub Pages
-        uses: actions/configure-pages@v6
-
       - name: Upload website
         uses: actions/upload-pages-artifact@v5
         with:
           path: dist
 
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
       - name: Publish website
         id: deployment
         uses: actions/deploy-pages@v5
